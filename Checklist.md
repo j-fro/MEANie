@@ -1,7 +1,7 @@
 #Goals
 ###Branch: cleanUp
-[ ] Clean up code
-[ ] Fix bugs
+[x] Clean up code
+[x] Fix bugs
 
 ###Branch: domDisplay
 [ ] Display data on DOM
