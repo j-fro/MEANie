@@ -10,20 +10,24 @@ myApp.controller('whereMyPeeps', ['$scope', '$http', function($scope, $http) {
             method: 'POST',
             url: '/testPost',
             data: objectToSend
+        })
+        .then(function(response) {
+            if(response.statusText === 'OK') {
+                $scope.nameIn = '';
+                $scope.locationIn = '';
+            }
         });
-        $scope.nameIn = '';
-        $scope.locationIn = '';
     };
     $scope.getRecords = function() {
-        $.http({
+        $http({
                 method: 'GET',
                 url: '/getRecords',
             })
             .then(function(response) {
-                $scope.allTheRecords = response;
+                $scope.allTheRecords = response.data;
                 console.log($scope.allTheRecords);
             })
-            .then(function myError(response) {
+            .catch(function myError(response) {
                 console.log(response.statusText);
             });
     };
