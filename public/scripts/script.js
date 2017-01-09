@@ -12,6 +12,7 @@ myApp.controller('whereMyPeeps', ['$scope', '$http', function($scope, $http) {
             data: objectToSend
         })
         .then(function(response) {
+            console.log(response);
             if(response.statusText === 'OK') {
                 $scope.nameIn = '';
                 $scope.locationIn = '';

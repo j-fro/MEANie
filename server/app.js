@@ -44,7 +44,14 @@ app.post('/testPost', function(req, res) {
     };
     // create new record
     var newRecord = ourModel(recordToAdd);
-    newRecord.save();
+    newRecord.save(function(err) {
+        if(err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(200);
+        }
+    });
 });
 
 app.use(express.static('public'));
