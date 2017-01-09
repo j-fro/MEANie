@@ -4,7 +4,7 @@
 [x] Fix bugs
 
 ###Branch: domDisplay
-[ ] Display data on DOM
+[x] Display data on DOM
 
 ###Branch: deleteButton
-[ ] Add delete functionality
+[x] Add delete functionality

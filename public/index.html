@@ -18,7 +18,7 @@
         <button ng-click='addRecord()'>Add</button>
         <ul>
             <li ng-repeat="peep in allTheRecords">
-                {{ peep.name }} is chillin' in {{ peep.location }}
+                {{ peep.name }} is {{ euphamisms[$index % euphamisms.length] }} in {{ peep.location }}
                 <button ng-click="deleteRecord(peep._id)">Delete {{ peep.name }}</button>
             </li>
         </ul>

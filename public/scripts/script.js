@@ -1,5 +1,6 @@
 var myApp = angular.module('myApp', []);
 myApp.controller('whereMyPeeps', ['$scope', '$http', function($scope, $http) {
+    $scope.euphamisms = ["chillin'", "hangin'", "grindin'", "cruisin'", "ballin'", "relaxin'"];
     $scope.addRecord = function() {
         event.preventDefault();
         var objectToSend = {
