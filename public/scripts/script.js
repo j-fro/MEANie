@@ -14,6 +14,7 @@ myApp.controller('whereMyPeeps', ['$scope', '$http', function($scope, $http) {
         .then(function(response) {
             console.log(response);
             if(response.statusText === 'OK') {
+                $scope.getRecords();
                 $scope.nameIn = '';
                 $scope.locationIn = '';
             }
