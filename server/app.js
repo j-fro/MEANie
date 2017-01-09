@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 mongoose.connect('localhost:/27017/test');
 
 var ourSchema = new mongoose.Schema({
-    name: String
+    name: String,
     location: String
 });
 
@@ -39,10 +39,10 @@ app.post('/testPost', function(req, res) {
     // retrieved the req.body
     // putting it into an object to be saved in the db
     var recordToAdd = {
-            name = req.body.name,
-            location = req.body.location
-        }
-        // create new record
+            name: req.body.name,
+            location: req.body.location
+    };
+    // create new record
     var newRecord = ourModel(recordToAdd);
     newRecord.save();
 });
