@@ -54,4 +54,16 @@ app.post('/testPost', function(req, res) {
     });
 });
 
+app.delete('/deleteRecord/:id', function(req, res) {
+    console.log('Deleting record with id:', req.params.id);
+    ourModel.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(200);
+        }
+    });
+});
+
 app.use(express.static('public'));
